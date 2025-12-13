@@ -26,16 +26,27 @@ document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
 
-// Form submission
-document
-  .querySelector(".contact-form")
-  .addEventListener("submit", function (e) {
+// Form submission with custom popup
+const contactForm = document.querySelector(".contact-form");
+const popupInfo = document.getElementById("popupInfo");
+const popupInfoClose = document.getElementById("popupInfoClose");
+const popupInfoBtn = document.getElementById("popupInfoBtn");
+if (contactForm && popupInfo && popupInfoClose && popupInfoBtn) {
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    alert(
-      "Terima kasih! Pesan Anda telah dikirim. Tim kami akan segera menghubungi Anda."
-    );
+    popupInfo.classList.add("show");
     this.reset();
   });
+  function closePopupInfo() {
+    popupInfo.classList.remove("show");
+  }
+  popupInfoClose.addEventListener("click", closePopupInfo);
+  popupInfoBtn.addEventListener("click", closePopupInfo);
+  // Close popup on outside click
+  popupInfo.addEventListener("click", function (e) {
+    if (e.target === popupInfo) closePopupInfo();
+  });
+}
 
 // Smooth scroll with offset for fixed navbar
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
