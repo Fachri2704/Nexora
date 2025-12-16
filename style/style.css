@@ -1,3 +1,72 @@
+/* Tech Stack Icon Styling */
+.tech-icon {
+  margin-right: 0.6em;
+  font-size: 1.25em;
+  vertical-align: middle;
+  opacity: 0.95;
+  transition: filter 0.2s;
+}
+.tech-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+.tech-card ul li::before {
+  display: none !important;
+}
+.fa-html5 {
+  color: #e44d26;
+}
+.fa-css3-alt {
+  color: #1572b6;
+}
+.fa-js-square {
+  color: #f7df1e;
+}
+.fa-react {
+  color: #61dafb;
+}
+.fa-node-js {
+  color: #3c873a;
+}
+.fa-php {
+  color: #777bb4;
+}
+.fa-microsoft {
+  color: #0078d4;
+}
+.fa-plug {
+  color: #888;
+}
+.fa-database {
+  color: #0064a5;
+}
+.fa-git-alt {
+  color: #f34f29;
+}
+.fa-github {
+  color: #181717;
+}
+.fa-docker {
+  color: #2496ed;
+}
+.fa-figma {
+  color: #f24e1e;
+}
+.fa-sync-alt {
+  color: #06b6d4;
+}
+.fa-aws {
+  color: #ff9900;
+}
+.fa-fire {
+  color: #ffca28;
+}
+.fa-vuejs {
+  color: #41b883;
+}
+.fa-linux {
+  color: #333;
+}
 /* Popup Info Styling */
 .popup-info {
   display: none;
@@ -444,6 +513,157 @@ section h2::after {
   color: var(--primary);
   font-weight: bold;
 }
+ .team {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .team::after {
+            content: '';
+            position: absolute;
+            bottom: -35%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .team .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            padding-top: 25px;
+            gap: 2.5rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .team-card::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0.02;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary);
+        }
+
+        .team-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .team-card:hover::after {
+            bottom: -60px;
+            opacity: 0.04;
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-card:hover .team-photo {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-card h3 {
+            color: var(--dark);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .team-card:hover h3 {
+            color: var(--primary);
+        }
+
+        .team-card span {
+            display: block;
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
 
 /* SERVICES */
 .services {
@@ -704,6 +924,160 @@ section h2::after {
   line-height: 1.7;
   margin: 0 1.2rem 0.5rem 1.2rem;
   min-height: 48px;
+}
+
+.tech-stack {
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-stack::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.03) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.tech-stack::after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.03) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.tech-stack .container {
+  position: relative;
+  z-index: 1;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding-top: 25px;
+  gap: 2rem;
+}
+
+.tech-card {
+  background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(37, 99, 235, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tech-card::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0.02;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.12);
+  border-color: var(--primary);
+}
+
+.tech-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tech-card:hover::after {
+  bottom: -30px;
+  right: -30px;
+  opacity: 0.04;
+}
+
+.tech-card h3 {
+  color: var(--dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.tech-card:hover h3 {
+  color: var(--primary);
+}
+
+.tech-card ul {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tech-card ul li {
+  padding: 0.6rem 0;
+  color: var(--gray);
+  font-size: 1rem;
+  position: relative;
+  padding-left: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.tech-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover ul li::before {
+  width: 10px;
+  height: 10px;
+}
+
+.tech-card ul li:hover {
+  color: var(--dark);
+  padding-left: 2rem;
 }
 
 /* Responsive for project cards */
