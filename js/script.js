@@ -1,3 +1,31 @@
+// Fade-in-up animation for section
+function fadeInUpOnScroll() {
+  document.querySelectorAll('.fade-in-up').forEach(function(section) {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      section.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', fadeInUpOnScroll);
+window.addEventListener('DOMContentLoaded', fadeInUpOnScroll);
+// Hero section hide on scroll
+const heroSection = document.querySelector(".hero");
+let heroHidden = false;
+window.addEventListener("scroll", function () {
+  if (!heroSection) return;
+  if (window.scrollY > window.innerHeight * 0.4) {
+    if (!heroHidden) {
+      heroSection.classList.add("hero-hidden");
+      heroHidden = true;
+    }
+  } else {
+    if (heroHidden) {
+      heroSection.classList.remove("hero-hidden");
+      heroHidden = false;
+    }
+  }
+});
 // Navbar scroll effect
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
