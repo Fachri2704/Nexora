@@ -915,11 +915,12 @@ section h2::after {
   box-shadow: none;
   border: none;
   background: #e0e7ff;
-  transition: filter 0.25s;
+  transition: filter 0.25s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-img {
   filter: brightness(0.95) saturate(1.1);
+  transform: scale(1.07);
 }
 
 .project-category {
